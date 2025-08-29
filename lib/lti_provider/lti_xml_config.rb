@@ -10,7 +10,7 @@ module LtiProvider
 
     def self.setup!
       config = LtiProvider::XmlConfig
-      if File.exists?(config_file)
+      if File.exist?(config_file)
         Rails.logger.info "Initializing LTI XML config using configuration in #{config_file}"
         load_config.each do |k,v|
           config.send("#{k}=", v)
