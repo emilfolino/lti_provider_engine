@@ -1,7 +1,7 @@
 module LtiProvider
   module LtiConfig
     def self.load_config
-      YAML::load(File.open(config_file))[Rails.env]
+      YAML::load(File.open(config_file), aliases: true)[Rails.env]
     end
 
     def self.config_file
