@@ -6,7 +6,7 @@ module LtiProvider
 
     attr_accessor :lti_errormsg
 
-    serialize :provider_params
+    serialize :provider_params, Hash
 
     def self.initialize_from_request(provider, request)
       launch = new
